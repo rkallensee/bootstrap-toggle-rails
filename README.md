@@ -28,13 +28,13 @@ To load the required assets in your application add the appropriate line to your
 
 `app/assets/javascripts/application.js`:
 
-```
+```javascript
 //= require bootstrap-toggle
 ```
 
 or in case of Bootstrap 2:
 
-```
+```javascript
 //= require bootstrap2-toggle
 ```
 
@@ -50,10 +50,20 @@ or in case of Bootstrap 2:
 *= require bootstrap2-toggle
 ```
 
+### Initialization
+
 To replace a checkbox with toggles just add the `data-toggle="toggle"` attribute to the checkbox, e.g.:
 
-```
+```html
 <input type="checkbox" checked data-toggle="toggle">
+```
+
+Remember: this kind of initialization does not seem to be compatible to [Turbolinks](). If you use Turbolinks you should manually initialize with JavaScript and also attach the `page:change` event fired by Turbolinks, e.g.:
+
+```javascript
+$(document).on('ready page:change', function() {
+  $('input[type="checkbox"].toggle').bootstrapToggle(); // assumes the checkboxes have the class "toggle"
+});
 ```
 
 For more documentation see [bootstraptoggle.com](http://www.bootstraptoggle.com/) or their [Github project](https://github.com/minhur/bootstrap-toggle/).
