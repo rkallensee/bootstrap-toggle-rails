@@ -1,7 +1,8 @@
 module Bootstrap
   module Toggle
     module Rails
-      VERSION = "2.2.1.0"
+      class Engine < ::Rails::Engine
+      end
     end
   end
 end

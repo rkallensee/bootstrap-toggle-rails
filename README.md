@@ -1,8 +1,10 @@
-# Bootstrap::Toggle::Rails
+[![Gem Version](http://badge.fury.io/rb/bootstrap-toggle-rails.png)](http://badge.fury.io/rb/bootstrap-toggle-rails)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/bootstrap/toggle/rails`. To experiment with that code, run `bin/console` for an interactive prompt.
+# Bootstrap Toggle Rails
 
-TODO: Delete this and the text above, and describe your gem
+[Bootstrap Toggle](http://www.bootstraptoggle.com/) is a highly flexible Bootstrap plugin that converts checkboxes into toggles.
+
+`bootstrap-toggle-rails` is an unofficial gem which integrates this Bootstrap plugin with the Rails asset pipeline.
 
 ## Installation
 
@@ -22,7 +24,40 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To load the required assets in your application add the appropriate line to your application.js/application.css (depending on whether you use Bootstrap in version 3 or 2):
+
+`app/assets/javascripts/application.js`:
+
+```
+//= require bootstrap-toggle
+```
+
+or in case of Bootstrap 2:
+
+```
+//= require bootstrap2-toggle
+```
+
+`app/assets/stylesheets/application.css`:
+
+```
+*= require bootstrap-toggle
+```
+
+or in case of Bootstrap 2:
+
+```
+*= require bootstrap2-toggle
+```
+
+To replace a checkbox with toggles just add the `data-toggle="toggle"` attribute to the checkbox, e.g.:
+
+```
+<input type="checkbox" checked data-toggle="toggle">
+```
+
+For more documentation see [bootstraptoggle.com](http://www.bootstraptoggle.com/) or their [Github project](https://github.com/minhur/bootstrap-toggle/).
+
 
 ## Development
 
@@ -32,10 +67,10 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/bootstrap-toggle-rails. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/rkallensee/bootstrap-toggle-rails. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT), just as the "Bootstrap Toggle" plugin itself.
 

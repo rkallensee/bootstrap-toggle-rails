@@ -1,3 +1,4 @@
+require "bootstrap/toggle/rails/engine"
 require "bootstrap/toggle/rails/version"
 
 module Bootstrap
